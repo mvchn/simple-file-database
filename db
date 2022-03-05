@@ -1,0 +1,9 @@
+#!/bin/bash
+
+db_set () {
+    echo "$1,$2" >> data.csv
+}
+
+db_get () {
+    grep "^$1," data.csv | sed -e "s/^$1,//" | tail -n 1
+}
